@@ -1,8 +1,6 @@
 name: Python application
 
 on:
-  watch:
-    types: [started]
   schedule:
     - cron: "0 */3 * * *"
 
@@ -12,7 +10,6 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
-    if: github.event.repository.owner.id == github.event.sender.id
     steps:
     - uses: actions/checkout@v3
     - name: Set up Python 3.10
